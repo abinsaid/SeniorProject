@@ -13,6 +13,8 @@ import {
 import bgImage from "./images/background.png";
 import icon from "./images/icon.png";
 
+navigation 
+
 const {width: WIDTH } = Dimensions.get('window')
 export default class SmartSchedulingSystem extends Component {
   render() {
@@ -35,9 +37,12 @@ export default class SmartSchedulingSystem extends Component {
           <Text style={styles.btnRegister}>Get Started</Text>
         </TouchableOpacity>
         
-        <TouchableOpacity>
-          <Text style={styles.btnLogin}>Login</Text>
+        <TouchableOpacity
+        onPress={() =>
+           this.props.navigation.navigate("Login")}
+        ><Text style={styles.btnLogin}>Login</Text>
         </TouchableOpacity>
+        
       </ImageBackground>
     );
   }
