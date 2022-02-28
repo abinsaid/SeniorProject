@@ -1,0 +1,23 @@
+1.jpeg
+topic :  Mining Data
+instructor الطالبة: شروق باعبدالله
+day :  Monday
+date 2022-02-21
+===============================
+2.jpeg
+topic :  بناء الشخصية وتطوير الذات
+instructor د. علي حسين
+day :  Wednesday
+date 2021-10-27
+===============================
+1.jpg
+topic :  Topic not Found
+instructor أ. عبدالله عسيري
+day :  Wednesday
+date 2022-02-09
+===============================
+topic :  قاعدة بيانات IEEE
+instructor أونلاين - عبر البلاك بورد
+day :  Tuesday
+date 2021-10-12
+
