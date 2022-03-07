@@ -1,13 +1,13 @@
 import React, { useState } from 'react';
-import { Text, StyleSheet, View, Button, TouchableOpacity, TextInput } from 'react-native';
+import { Text, StyleSheet, View, Button, TouchableOpacity, TextInput, ImageBackground } from 'react-native';
 import { Dimensions } from 'react-native';
-
 const windowWidth = Dimensions.get('window').width;
 const windowHeight = Dimensions.get('window').height;
 
 export default function Login({ navigation }) {
 
     return (
+        <ImageBackground source={require('../images/background.png')} style={styles.backgroundContainer}>
         <View 
        
         style={styles.ViewStyle}>
@@ -26,24 +26,15 @@ export default function Login({ navigation }) {
             ></TextInput>
             <TouchableOpacity
             style={{
-                backgroundColor:"green",
+                backgroundColor: '#0AC195CC',
                 borderRadius:5,
                 width:windowWidth,
                 Height:windowHeight
             }}
-
             onPress={()=>{
 
             }}
             ><Text style={{textAlign:"center" , fontSize:30}}>Login</Text></TouchableOpacity>
-            
-            <Text>Forget Password?  </Text>
-            
-            <TouchableOpacity onPress={() => {
-                navigation.navigate("Reset Password")
-            }}
-            ><Text style={{color:"blue" }}>Reset Password</Text></TouchableOpacity>
-            
             
             <Text style={{fontWeight:"bold"}}>don't have an account? </Text>
             <TouchableOpacity
@@ -52,6 +43,7 @@ export default function Login({ navigation }) {
                 }}
             ><Text>Sign Up</Text></TouchableOpacity>
         </View>
+        </ImageBackground>
     );
 }
 const styles = StyleSheet.create({
@@ -70,4 +62,11 @@ const styles = StyleSheet.create({
         width: windowWidth * 1,
         height: windowHeight * 0.05
     },
+    backgroundContainer: {
+        flex: 1,
+        width: null,
+        height: null,
+        alignItems: "center",
+        justifyContent: "center",
+      }
 });

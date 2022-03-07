@@ -1,12 +1,15 @@
 import React, { useState } from 'react';
-import { Text, StyleSheet, View, Button, TouchableOpacity, TextInput } from 'react-native';
+import { Text, StyleSheet, View, Button, TouchableOpacity, TextInput,ImageBackground } from 'react-native';
 import { Dimensions } from 'react-native';
 
 const windowWidth = Dimensions.get('window').width;
 const windowHeight = Dimensions.get('window').height;
 
 export default function SignUp() {
-    return (<View style={styles.ViewStyle}>
+    return (
+        <ImageBackground source={require('../images/background.png')} style={styles.backgroundContainer}>
+
+    <View style={styles.ViewStyle}>
         <TextInput
             placeholder="First Name"
             style={styles.InputStyle}>
@@ -39,6 +42,7 @@ export default function SignUp() {
         <TouchableOpacity><Text>Confirm</Text></TouchableOpacity>
 
     </View>
+    </ImageBackground>
     );
 }
 
@@ -57,6 +61,12 @@ const styles = StyleSheet.create({
         borderWidth: 1,
         width: windowWidth * 1,
         height: windowHeight * 0.05
-
     },
+    backgroundContainer: {
+        flex: 1,
+        width: null,
+        height: null,
+        alignItems: "center",
+        justifyContent: "center",
+      }
 });
