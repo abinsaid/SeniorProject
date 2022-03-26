@@ -10,7 +10,7 @@ import {
   SafeAreaView,
   ScrollView,
 } from "react-native";
-import auth from "@react-native-firebase/auth";
+
 
 const { width: WIDTH } = Dimensions.get("window");
 const windowWidth = Dimensions.get('window').width;

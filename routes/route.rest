@@ -1,0 +1,14 @@
+
+POST  http://localhost:3000/usrRoutes
+Content-Type: application/json
+
+{ 
+
+    "usrName": "Abdullah",
+    "email":"Abdullah@gmail.com",
+    "password": "12121"
+}
+
+###
+
+GET http://localhost:3000/usrRoutes

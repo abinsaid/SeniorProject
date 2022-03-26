@@ -7,9 +7,9 @@ const {width: WIDTH } = Dimensions.get('window')
 const windowWidth = Dimensions.get('window').width;
 const windowHeight = Dimensions.get('window').height;
 
- onGetUsr = (email) =>{
+//  onGetUsr = (email) =>{
 
- }
+//  }
 export default function Login({ navigation }) {
   
   
@@ -71,7 +71,7 @@ const styles = StyleSheet.create({
     ViewStyle:{
         flex: 0.5,
         justifyContent: "space-between",
-        backgroundColor:"white"
+        backgroundColor:"#bfc0c0"
      
     },
     InputStyle: {

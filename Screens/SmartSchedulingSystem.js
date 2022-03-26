@@ -25,7 +25,7 @@ export default function SmartSchedulingSystem({ navigation }) {
         onPress={() => {
           navigation.navigate('Login');
         }}
-      ><Text style={styles.btnRegister}>Login</Text>
+      ><Text style={styles.btnRegister}>Get Started!</Text>
       </TouchableOpacity>
 
     </ImageBackground>
