@@ -5,8 +5,8 @@ const usr = require('../models/usr')
 
 
 
-// //creating one 
-router.post('/', async (req,res) => {
+// // incase someone made a signup post request, the router.post will handle and catch it 
+router.post('/Screens/SignUp', async (req,res) => {
  const usr1 = new usr({
     usrName: req.body.usrName, 
     email: req.body.email,

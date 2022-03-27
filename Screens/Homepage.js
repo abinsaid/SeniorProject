@@ -73,7 +73,8 @@ export const styles = StyleSheet.create({
     // paddingBottom: 50,
     height: 650,
     borderRadius:105 ,
-    width:windowWidth *1
+    width:windowWidth *1,
+    
   },
   homeText: {
       marginTop: -150,
@@ -111,3 +112,5 @@ export const styles = StyleSheet.create({
 
  }
 });
+
+

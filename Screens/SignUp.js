@@ -1,39 +1,35 @@
 
-import React, { useState, useEffect } from "react";
-import {Text,Alert,StyleSheet,View,Button,TouchableOpacity,TextInput,Input,ImageBackground,Dimensions,Form,SafeAreaView} from "react-native";
-import Checkbox from "react-native-checkbox-animated";
-// import CheckBox from '@react-native-community/checkbox';
-
-// import CheckBox from 'react-native-check-box'
-// import { MongoUsr } from "../DataBase/users";
-
-
-// import e from "express";
+import React, { input,Label, useState, useEffect } from "react";
+import {Text,Alert,StyleSheet,View,Button,Element,TouchableOpacity,TextInput,Input,ImageBackground,Dimensions,Form,SafeAreaView} from "react-native";
+import CheckBox from 'expo-checkbox';
 
 const windowWidth = Dimensions.get("window").width;
 const windowHeight = Dimensions.get("window").height;
 
-// const [toggleCheckBox, setToggleCheckBox] = useState(false)
 
-  // }
-  // onUsrAdded = (usr) => {};
-  
 export default function SignUp() {
 
-  // const [checked, setChecked] = useState(false);
 
+  // declare the user variables and their intrests
   const [studName, setName] = useState('');
   const [email, setEmail] = useState('');
      const [pass, setPassword] = useState('');
 
-  // const [toggleCheckBox, setToggleCheckBox] = useState(false)
+     const [ITCheckBox, setITCheckBox] = useState(false)
+     const [cyberCheckBox, setCyberCheckBox] = useState(false)
+     const [AICheckBox, setAICheckBox] = useState(false)
+     const [gameCheckBox, setGameCheckBox] = useState(false)
+     const [webCheckBox, setWebCheckBox] = useState(false)
 
-  const student = { studName, email, pass };
+     const [otherCheckBox, setOtherCheckBox] = useState(false)
+
+  const student = { studName, email, pass,ITCheckBox,cyberCheckBox,AICheckBox,gameCheckBox,webCheckBox,otherCheckBox};
    
 const onClickListener = () => {
   if(studName){
     if(email){
       if(pass){
+        
 
         console.log({student})
 
@@ -71,14 +67,16 @@ const onClickListener = () => {
 //  }
 
   return (
-    
+
     <ImageBackground
       source={require("../images/background.png")}
       style={styles.backgroundContainer}
     >
-      <View style={styles.ViewStyle}>
-      
-      {/* <Form onSubmit{}> */}
+      <View style={styles.PageStyle}>
+      <Text style ={styles.h1}>Register your info</Text>
+       {/* for new lines: */}
+       <Text></Text>
+
         <TextInput
           placeholder="name"
        
@@ -104,33 +102,100 @@ const onClickListener = () => {
           style={styles.InputStyle}
         ></TextInput>
         
-         
+         <Text></Text>
+  <View style={styles.checkboxContainer}>
+  
+  <CheckBox style={styles.checkbox}
+    disabled={false}
+    placeholder="IT"
+    value={ITCheckBox}
+    onValueChange={(newValue) => setITCheckBox(newValue)}
+  />
+  <Text style={styles.label}> IT related</Text>
+      </View>
+      {/* ////////////////////////// */}
 
-        <TouchableOpacity 
+      <View style={styles.checkboxContainer}>
+  
+  <CheckBox style={styles.checkbox}
+    disabled={false}
+    placeholder="cyber"
+    value={cyberCheckBox}
+    onValueChange={(newValue) => setCyberCheckBox(newValue)}
+  />
+  <Text style={styles.label}> Cyber Security </Text>
+      </View>
+      {/* ////////////////////////// */}
+
+      <View style={styles.checkboxContainer}>
+  
+  <CheckBox style={styles.checkbox}
+    disabled={false}
+    placeholder="AI"
+    value={AICheckBox}
+    onValueChange={(newValue) => setAICheckBox(newValue)}
+  />
+  <Text style={styles.label}> AI related</Text>
+      </View>
+      {/* ////////////////////////// */}
+
+      <View style={styles.checkboxContainer}>
+  
+  <CheckBox style={styles.checkbox}
+    disabled={false}
+    placeholder="game"
+    value={gameCheckBox}
+    onValueChange={(newValue) => setGameCheckBox(newValue)}
+  />
+  <Text style={styles.label}> Game development </Text>
+      </View>
+      {/* ////////////////////////// */}<View style={styles.checkboxContainer}>
+  
+  <CheckBox style={styles.checkbox}
+    disabled={false}
+    placeholder="Web"
+    value={webCheckBox}
+    onValueChange={(newValue) => setWebCheckBox(newValue)}
+  />
+  <Text style={styles.label}> Web development </Text>
+      </View>
+      {/* ////////////////////////// */}
+      <View style={styles.checkboxContainer}>
+  
+  <CheckBox style={styles.checkbox}
+    disabled={false}
+    placeholder="other"
+    value={otherCheckBox}
+    onValueChange={(newValue) => setOtherCheckBox(newValue)}
+  />
+ 
+  <Text style={styles.label}> other </Text>
+      </View>
+
+      {/* for new lines: */}
+      <Text>{"\n"}{"\n"}{"\n"}</Text>
+     
+
+      
+      <TouchableOpacity 
         onPress={onClickListener} 
         >
-          <Text>Confirm</Text>
-         {/* <Text>{ console.log("info's are stored!: "+ {student})}</Text> */}
+          <Text style = {styles.btnConfirm}>Confirm</Text>
+       
         </TouchableOpacity>
-
-        {/* </Form> */}
-        {/* <View>
-        <CheckBox
-        label="your label here"
-        onValueChange={val => setChecked(val)}
-        checked={checked}
-      />
-  </View> */}
       </View>
-      
+
     </ImageBackground>
+
+    
   );
 }
 
 const styles = StyleSheet.create({
-  ViewStyle: {
-    flex: 0.55,
-    justifyContent: "space-between",
+  PageStyle: {
+    flex: 0.85,
+    width: windowWidth ,
+    // justifyContent: "space-between",
     backgroundColor: "#e8e8e4",
   },
   container: {
@@ -140,13 +205,15 @@ const styles = StyleSheet.create({
   },
   checkboxContainer: {
     flexDirection: "row",
-    marginBottom: 20,
+    alignItems:"",
+    // marginBottom: 20,
   },
   checkbox: {
     alignSelf: "center",
+    margin: "center"
   },
   label: {
-    // margin: 5,
+  //  margin: "center"
   },
 
   InputStyle: {
@@ -155,8 +222,13 @@ const styles = StyleSheet.create({
     borderRadius: 6,
     borderColor: "black",
     borderWidth: 1,
-    width: windowWidth * 1,
+    width: windowWidth - 100,
     height: windowHeight * 0.05,
+    marginRight:40,
+    alignSelf:'center',
+    paddingLeft:5,
+    borderWidth: 1,
+
   },
   backgroundContainer: {
     flex: 1,
@@ -164,5 +236,45 @@ const styles = StyleSheet.create({
     height: null,
     alignItems: "center",
     justifyContent: "center",
+    
   },
+  checkbox: {
+    alignSelf: "center",
+   
+  },
+  checkboxContainer: {
+    flexDirection: "row",
+    // alignSelf: "center",
+    marginLeft:70,
+    width: windowWidth -100,
+    // borderWidth: 1,
+    
+    // marginBottom: 20,
+  },
+  label: {
+    fontSize: 22,
+    marginBottom:5,
+    // paddingTop:2
+  },
+   TextFields: {
+
+  }, 
+  btnConfirm: {
+    fontWeight:'bold',
+        fontSize :22,
+        color:'#003049',
+        backgroundColor: "#48cae4",
+        width: windowWidth - 300,
+        textAlign:'center',
+        borderRadius:170 ,
+        marginLeft:20,
+        
+
+  },
+  h1:{
+  fontSize: 30,
+  fontWeight:'bold',
+  alignSelf:'center'
+
+  }
 });

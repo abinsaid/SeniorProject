@@ -2,7 +2,7 @@
 import React, { useState, useEffect } from 'react';
 import { Text, StyleSheet, View, Button, TouchableOpacity, TextInput, ImageBackground, Dimensions, SafeAreaView } from 'react-native';
 //   import {GoogleSignin,GoogleSigninButton,statusCodes} from 'react-native-google-signin';
-const {width: WIDTH } = Dimensions.get('window')
+// const {width: WIDTH } = Dimensions.get('window')
 
 const windowWidth = Dimensions.get('window').width;
 const windowHeight = Dimensions.get('window').height;
@@ -28,12 +28,12 @@ const [initializing, setInitializing] = useState(true);
         <ImageBackground source={require('../images/background.png')} style={styles.backgroundContainer}>
         <View 
         
-        style={styles.ViewStyle}>
+        style={styles.pageStyle}>
                          <Text
                          style={{textAlign:"center" , fontSize:40}}
                          >Welcome</Text>
 
-            <Text>Email:</Text>
+            <Text style = {styles.label}>Email:</Text>
             <TextInput style={styles.InputStyle}
             placeholder = "email"
              value={email}
@@ -41,7 +41,7 @@ const [initializing, setInitializing] = useState(true);
              onChange = {text => setEmail(text)} 
             ></TextInput>
 
-            <Text>Password:</Text>
+            <Text style = {styles.label}>Password:</Text>
             <TextInput  style={styles.InputStyle}
             placeholder = "password"
              value={password}
@@ -61,16 +61,16 @@ const [initializing, setInitializing] = useState(true);
                 onPress={() => {
                     navigation.navigate("SignUp")
                 }}
-            ><Text>Sign Up</Text></TouchableOpacity>
+            ><Text style = {styles.btnSignUp}>Sign Up</Text></TouchableOpacity>
 
         </View>
         </ImageBackground>
     );
 }
 const styles = StyleSheet.create({
-    ViewStyle:{
-        flex: 0.5,
-        justifyContent: "space-between",
+    pageStyle:{
+        flex: 0.8,
+        // justifyContent: "space-between",
         backgroundColor:"#bfc0c0"
      
     },
@@ -81,7 +81,8 @@ const styles = StyleSheet.create({
         borderColor: 'black',
         borderWidth: 1,
         width: windowWidth * 1,
-        height: windowHeight * 0.05
+        height: windowHeight * 0.05,
+        marginBottom: 20,
     },
     backgroundContainer: {
         flex: 1,
@@ -91,18 +92,32 @@ const styles = StyleSheet.create({
         justifyContent: "center",
       },
       btnLogin: {
-        width: WIDTH - 75,
+        width: windowWidth - 75,
         color:'#003049',
         textAlign:'center',
         backgroundColor: '#0AC195CC',
         fontWeight:'bold',
         borderRadius:205 , 
-        width: WIDTH - 250,
+        width: windowWidth - 250,
         height:45,
         fontSize :22,
         marginBottom: 30,
         marginTop: 20,
         paddingTop:7
+      },
+      btnSignUp: {
+        fontWeight:'bold',
+        fontSize :22,
+        color:'#003049',
+        backgroundColor: "#bee1e6",
+        width: windowWidth - 250,
+        textAlign:'center',
+        borderRadius:205 ,
+        marginTop:20,
+
+      },
+      label: {
+       fontSize: 22,
       }
       
 });
