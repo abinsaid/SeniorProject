@@ -5,15 +5,6 @@ import {Card, Avatar} from 'react-native-paper';
 
 
 function Schedule() {
-    const renderItem = () => {
-        return (
-          <View style={styles.itemContainer}>
-            <Text>{item.name}</Text>
-            <Text>{item.cookies ? `🍪` : `😋`}</Text>
-          </View>
-        );
-      };
-    
       return (
         <SafeAreaView style={styles.safe}>
           <Agenda  />
