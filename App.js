@@ -11,22 +11,32 @@ import SignUp from "./Screens/SignUp";
 import Login from "./Screens/Login";
 import EventsScreen from "./Screens/EventsScreen"
 import Homepage from "./Screens/Homepage"
+import Schedule from "./Screens/Schedule"
 import SmartSchedulingSystem from './Screens/SmartSchedulingSystem';
+import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
+
 
 const Stack = createNativeStackNavigator();
+const Tab = createBottomTabNavigator();
 
-
-function StackNavigator() {
+export default function StackNavigator() {
  return(
   <NavigationContainer>
   <Stack.Navigator>
   <Stack.Screen name = "start up" component={SmartSchedulingSystem}/>
   <Stack.Screen name = "Login" component={Login}/>
   <Stack.Screen name = "SignUp" component={SignUp}/>
-  <Stack.Screen name = "EventsScreen" component={EventsScreen}/>
-  <Stack.Screen name = "Homepage" component={Homepage}/>
+  <Stack.Screen name = "Home" component={Tabs} options={{ headerShown: false }}/>
   </Stack.Navigator>
 </NavigationContainer>
  );
 }
-export default StackNavigator;
+function Tabs(){
+  return(
+    <Tab.Navigator>
+      <Tab.Screen name = "HomePage" component={Homepage}/>
+      <Tab.Screen name = "Events" component={EventsScreen}/>
+      <Tab.Screen name = "Schedule" component={Schedule}/>
+    </Tab.Navigator>
+  )
+}

@@ -3,7 +3,7 @@ import { Text, StyleSheet, View, Button, TouchableOpacity, TextInput, ImageBackg
 
 
 
-export default function Login({ navigation }) {
+export default function EventsScreen({ navigation }) {
 
 return(
     <SafeAreaView>

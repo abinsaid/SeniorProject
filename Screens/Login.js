@@ -82,23 +82,14 @@ export default function Login({ navigation }) {
         ></TextInput>
         <TouchableOpacity
           onPress={() => {
-            navigation.navigate("Homepage");
+            navigation.navigate("Home");
           }}
         >
           <Text style={styles.btnLogin}>Login</Text>
         </TouchableOpacity>
-
-        <Text style={{ fontWeight: "bold" }}>don't have an account? </Text>
-        <TouchableOpacity
-          onPress={() => {
-            navigation.navigate("SignUp");
-          }}
-        >
-          <Text style={styles.btnSignUp}>Sign Up</Text>
-        </TouchableOpacity>
-      </View>
-    </ImageBackground>
-  );
+        </View>
+        </ImageBackground>
+    );
 }
 const styles = StyleSheet.create({
   pageStyle: {
