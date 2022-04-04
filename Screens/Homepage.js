@@ -15,7 +15,7 @@ import {
 const { width: WIDTH } = Dimensions.get("window");
 const windowWidth = Dimensions.get('window').width;
 const windowHeight = Dimensions.get('window').height;
-export default function Login({ navigation }) {
+export default function Homepage() {
   return (
     <ImageBackground source={require('../images/background.png')} style={styles.backgroundContainer}>
 
@@ -26,13 +26,7 @@ export default function Login({ navigation }) {
       <View style={styles.lowerView}>
         {/* <Text style={styles.homeText}>This is the Homepage screen!</Text> */}
        
-        <TouchableOpacity style = {styles.btnEvent}
-          onPress={() => {
-            navigation.navigate("EventsScreen");
-          }}
-        >
-          <Text style= {styles.btnEvent}>Events Page</Text>
-        </TouchableOpacity>
+       
      
       </View>
       </View>

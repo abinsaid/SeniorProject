@@ -52,7 +52,7 @@ const [initializing, setInitializing] = useState(true);
             <TouchableOpacity
             
             onPress={() => {
-                    navigation.navigate("Homepage")
+                    navigation.navigate("Home")
                 }}
             ><Text style={styles.btnLogin}>Login</Text></TouchableOpacity>
             
