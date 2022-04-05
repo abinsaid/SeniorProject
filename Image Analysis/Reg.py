@@ -274,6 +274,12 @@ def wordCorrection(words):
        words[k]=temp
        print("corrected")
        print(temp)
+
+      if temp.find("حفور")!=-1 :
+       temp = temp.replace("حفور","حضور")
+       words[k]=temp
+       print("corrected")
+       print(temp)
       '''
       if temp.find("الدكتودا")!=-1 :
        temp = temp.replace("الدكتودا","الدكتور")
@@ -937,9 +943,115 @@ def isEvent(text):
      for i in text :
       temp = i
       print("temp is  ",temp )
-      if temp.find("دورة بعنوان") !=-1 or temp.find("دورة :") !=-1 or temp.find("ورشة عمل بعنوان") !=-1 or temp.find("محاضرة بعنوان") !=-1 or temp.find("لقاء ريادي بعنوان") !=-1 or temp.find("محاضرة") !=-1 or temp.find("مخاضرة") !=-1 or temp.find("دورة تدريبية بعنوان") !=-1 or temp.find("تدريبية بعنوان :")!=-1 or temp.find("تدريبية بعنوان")!=-1 or temp.find("تدريبية بعنوان ")!=-1 or temp.find("لحضور دورة:")!=-1 or temp.find("دورة في")!=-1 or temp.find("دورة تطوير")!=-1 or temp.find("مقدمة في")!=-1 or temp.find("Introduction to")!=-1 or temp.find("ورش عمل برنامج")!=-1 or temp.find("دورة")!=-1 or temp.find("تقديم دورة بعنوان:")!=-1  or temp.find(" تقديم دورة بعنوان: ")!=-1 or temp.find("تقديم دورة بعنوان:")!=-1 or temp.find("ندوة بعنوان") !=-1 or temp.find("ندوة")!=-1 or temp.find("اللقاء")!=-1:        
+      if temp.find("دورة بعنوان") !=-1 or temp.find("دورة :") !=-1 or temp.find("ورشة عمل بعنوان") !=-1 or temp.find("محاضرة بعنوان") !=-1 or temp.find("لقاء ريادي بعنوان") !=-1 or temp.find("محاضرة") !=-1 or temp.find("مخاضرة") !=-1 or temp.find("دورة تدريبية بعنوان") !=-1 or temp.find("تدريبية بعنوان :")!=-1 or temp.find("تدريبية بعنوان")!=-1 or temp.find("تدريبية بعنوان ")!=-1 or temp.find("لحضور دورة:")!=-1 or temp.find("دورة في")!=-1 or temp.find("دورة تطوير")!=-1 or temp.find("مقدمة في")!=-1 or temp.find("Introduction to")!=-1 or temp.find("ورش عمل برنامج")!=-1 or temp.find("دورة")!=-1 or temp.find("تقديم دورة بعنوان:")!=-1  or temp.find(" تقديم دورة بعنوان: ")!=-1 or temp.find("تقديم دورة بعنوان:")!=-1 or temp.find("ندوة بعنوان") !=-1 or temp.find("ندوة")!=-1 or temp.find("اللقاء")!=-1 or temp.find("شهادات حضور") !=-1 or temp.find("شهادة حضور") !=-1 or temp.find("ساعدك هذا البرنامج")!=-1:        
            return True
      return False
+
+def processTime(timePattern1,timeText,timeNum,patternNum,time1):
+      am = "0"
+      pm = "0"
+      temp=""
+      print("time  found")
+      if(patternNum==1):
+       time1 = re.search(timePattern1, timeText).group()
+      stringT1 = time1
+      am = checkAm(am,time1)
+      pm = checkPm(pm,time1)
+      if(am ==0 and pm ==0): # this means that its written an 24-H  7:40 (no mention to am or pm)
+          am=1
+      print("am : ",am)
+      print("pm : ",pm)
+      print(time1)
+      time1=time1.replace(" ","")
+      time1=time1.replace("م","")
+      time1=time1.replace("ص","")
+      time1=time1.replace(":","")
+      print("before erorr,",time1)
+      time1=int(time1)
+      time1=addColon(time1)
+      print("len of time is ",len(time1) ,time1)
+      #if
+      if(len(time1)==4): # it became 4 due to adding : 
+          time1 = addZeroToTime(time1)
+          
+      oldHours= time1[0]+time1[1]
+      status24 = is24(oldHours)
+      if(status24==False ): # and am ==0
+       hours = convertTo24H(time1,am,pm)
+       print("hours is ",hours)
+       time1=time1.replace(" ","")
+       remove = oldHours+":"
+       print("rem",remove)
+       time1 =time1.replace(remove,"")
+       #time1 = time1[:0] + "" + time1[1:]
+       # time1 = time1[:1] + "" + time1[2:]
+       #time1 = time1[:1] +"" +time1[2:]
+       time1 = time1[:0] +str(hours) +time1[0:]
+       time1=addColon(time1)
+       time1PM=pm
+       time1Temp=time1
+       if(timeNum==2):
+        return time1,time1PM,time1Temp,temp,oldHours
+      print("starting time is ",time1)
+      temp =timeText.replace(stringT1, "")
+      
+      return time1,time1PM,time1Temp,temp,oldHours
+
+def updateTime(time,time1Temp): # frogot wha this do 
+           time1=time1Temp
+           print("no the time1 is ,",time1)
+           hours = convertTo24H(time1,0,1)
+           time1=time1.replace(" ","")
+           oldHours= time1[0]+time1[1]
+           remove = oldHours+":"
+           print("rem",remove)
+           time1 =time1.replace(remove,"")
+           #time1 = time1[:0] + "" + time1[1:]
+           # time1 = time1[:1] + "" + time1[2:]
+            #time1 = time1[:1] +"" +time1[2:]
+           time1 = time1[:0] +str(hours) +time1[0:]
+           time1=addColon(time1)
+           return time1
+
+def formatTime(time):
+      time=time.replace(" ","")
+      time=time.replace("م","")
+      time=time.replace("ص","")
+      time=time.replace(":","")
+      time=time.replace("من","")
+      time=time.replace("من","")
+
+      time = os.linesep.join([s for s in time.splitlines() if s]) # remove empty lines
+      timeLen = len(time)
+      print("t2 foramt ",timeLen,time)
+      time1=""
+      time2=""
+      if(time[2]=="-"): #10-
+          time1=time[0]+time[1]
+          time1 = time1[:2]+ "00" +time1[2:]
+          if(timeLen==5):#10-11
+           time2=time[3]+time[4]
+           time2 = time2[:5]+ "00" +time2[5:]
+          elif(timeLen==4):#10-11
+           time2=time[3]
+           time2 = time2[:4]+ "00" +time2[4:]
+
+      elif(time[1]=="-"): #10-
+          time1=time[0]
+          time1 = time1[:1]+ "00" +time1[1:]
+          if(timeLen==4):#10-11
+           time2=time[2]+time[3]
+           time2 = time2[:4]+ "00" +time2[4:]
+          elif(timeLen==3):#10-11
+           time2=time[2]
+           time2 = time2[:3]+ "00" +time2[3:]
+
+
+      return time1,time2
+
+
+    
+      
 
 
 def myReg(myImage) :
@@ -948,7 +1060,7 @@ def myReg(myImage) :
  print("*******************************************")
  index=0
  topic=""
- imageTest= r"C:\Users\Ammar\Desktop\test\Image Analysis\images\t.jpg"
+ imageTest= r"C:\Users\Ammar\Desktop\test\Image Analysis\images\4.jpg"
 
  #arrayText=ocrAPI(imageTest)
  #text=listToString(arrayText)
@@ -962,7 +1074,7 @@ def myReg(myImage) :
  print("xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx")
  print("arraytext[2] ",arrayText[2])
  #arrayText = text.splitlines()
-
+ arrayText= wordCorrection(arrayText)
    
  if(isEvent(arrayText) == False):
      print("This is not an event")
@@ -981,7 +1093,7 @@ def myReg(myImage) :
  #text2= wordCorrection(text2)
  #print(text2)
  #print("================================================================************************************")
- arrayText= wordCorrection(arrayText)
+
  topic= exteractTopic(arrayText) # it was arraytext
  if(topic=="Topic not Found"):
      print("nano is stopped temp")
@@ -1146,10 +1258,13 @@ def myReg(myImage) :
  #namePattern14=r'تقديم\s+((?:\w+(?:\s+|$)){2})' 
  to1 = "الى"
  to2 = "إلى"
-
+ s1 = "p.m"
+ s2="a.m"
  #timePattern1= "\s?م?ص?\d{1,2}\s?[:]\s? م?ص? \d{1,2}\s?[:]\s?م?ص?\s?"
  #timePattern1 = "\s?\ص?\م?\d{1,2}\s?\ص?\م?[-,"+to1+","+to2+"][?:,?.]\s?\ص?\م?\d{1,2}?\s?\ص?\م?"
- timePattern1 = "\s?\ص?\م?\d{1,2}\s?\ص?\م?[:,.]\s?\ص?\م?\d{1,2}\s?\ص?\م?"
+ timePattern1 = "\s?\a\ص?\م?\p?\d{1,2}\s?\ص?\م?[:,.]\s?\ص?\م?\d{1,2}\s?\ص?\م?"
+ timePattern2 = "\s?\ص?\م?\d{1,2}\s?\ص?\م?[-]\s?\ص?\م?\d{1,2}\s?\ص?\م?"
+ 
 
  # "\s?م?ص?\d{1,2}\s?[:]\s? م?ص? \d{1,2}\s?[:]\s?م?ص?\s?"
 
@@ -1558,109 +1673,45 @@ def myReg(myImage) :
  print("==============================")
 
  if(re.search(timePattern1, timeText)):
-      am = "0"
-      pm = "0"
-      print("time 1 found")
-      time1 = re.search(timePattern1, timeText).group()
-      stringT1 = time1
-      am = checkAm(am,time1)
-      pm = checkPm(pm,time1)
-      if(am ==0 and pm ==0): # this means that its written an 24-H  7:40 (no mention to am or pm)
-          am=1
-      print("am : ",am)
-      print("pm : ",pm)
-      print(time1)
-      time1=time1.replace(" ","")
-      time1=time1.replace("م","")
-      time1=time1.replace("ص","")
-      time1=time1.replace(":","")
-      time1=int(time1)
-      time1=addColon(time1)
-      print("len of time is ",len(time1) ,time1)
-      #if
-      if(len(time1)==4): # it became 4 due to adding : 
-          time1 = addZeroToTime(time1)
-          
-      oldHours= time1[0]+time1[1]
-      status24 = is24(oldHours)
-      if(status24==False ): # and am ==0
-       hours = convertTo24H(time1,am,pm)
-       print("hours is ",hours)
-       time1=time1.replace(" ","")
-       remove = oldHours+":"
-       print("rem",remove)
-       time1 =time1.replace(remove,"")
-       #time1 = time1[:0] + "" + time1[1:]
-       # time1 = time1[:1] + "" + time1[2:]
-       #time1 = time1[:1] +"" +time1[2:]
-       time1 = time1[:0] +str(hours) +time1[0:]
-       time1=addColon(time1)
-       time1PM=pm
-       time1Temp=time1
-      print("starting time is ",time1)
-      temp =timeText.replace(stringT1, "")
-
+    
+      time1,time1PM,time1Temp,temp,oldHours=processTime(timePattern1,timeText,1,1,time1)
+        
       if(re.search(timePattern1, temp)):
-       print("time 2 found")
-       time2 = re.search(timePattern1, temp).group()
-       stringT2 = time2
-       am="0"
-       pm="0"
-       am = checkAm(am,time2)
-       pm = checkPm(pm,time2)
-       if(am ==0 and pm ==0): # this means that its written an 24-H  7:40 (no mention to am or pm)
-         am=1
+        time2,time2PM,time2Temp,temp,oldHours=processTime(timePattern1,temp,2,1,time2)
+        
+       #if(len(time2)==2):
+          # time2 = time2[:2] + "0" +time2[2:]
+           #time2 = time2[:3] + "0" +time2[3:]
 
-       print("am : ",am)
-       print("pm : ",pm)
-       time2=time2.replace(" ","")
-       time2=time2.replace("م","")
-       time2=time2.replace("ص","")
-       time2=time2.replace(":","")
-       print("time 2  is .")
-       print("len of time is ",len(time2) ,time2)
-
-       if(len(time2)==2):
-           time2 = time2[:2] + "0" +time2[2:]
-           time2 = time2[:3] + "0" +time2[3:]
-       time2=int(time2)
-       time2=addColon(time2)
-       if(len(time2)==4):
-          time2 = addZeroToTime(time2)
-       oldHours= time2[0]+time2[1]
-       status24 = is24(oldHours)
-       if(status24==False ): # and am ==0
-        hours = convertTo24H(time2,am,pm)
-       print("hours is ",hours)
-       time2=time2.replace(" ","")
-       remove = oldHours+":"
-       print("rem",remove)
-       time2 =time2.replace(remove,"")
       #time1 = time1[:0] + "" + time1[1:]
       # time1 = time1[:1] + "" + time1[2:]
       #time1 = time1[:1] +"" +time1[2:]
    
-       time2 = time2[:0] +str(hours) +time2[0:]
-       time2=addColon(time2)
-       time2PM = pm
 
       if(time2PM ==1 and oldHours!=12):
-           time1=time1Temp
-           print("no the time1 is ,",time1)
-           hours = convertTo24H(time1,0,1)
-           time1=time1.replace(" ","")
-           oldHours= time1[0]+time1[1]
-           remove = oldHours+":"
-           print("rem",remove)
-           time1 =time1.replace(remove,"")
-           #time1 = time1[:0] + "" + time1[1:]
-           # time1 = time1[:1] + "" + time1[2:]
-            #time1 = time1[:1] +"" +time1[2:]
-           time1 = time1[:0] +str(hours) +time1[0:]
-           time1=addColon(time1)
-      print("finishing time is ",time2)
+          time1=updateTime(time1,time1Temp)
+
+      #print("finishing time is ",time2)
       print("T1")
-      
+
+ elif(re.search(timePattern2, timeText)) :
+     time = re.search(timePattern2, timeText).group()
+     print("t2 time is, ",time)
+     time1,time2 = formatTime(time)
+     print("time 1,",time1)
+     print("time 2,",time2)
+     time1,time1PM,time1Temp,temp,oldHours=processTime(timePattern2,timeText,1,2,time1)
+
+     if(re.search(timePattern2, temp)):
+        time2,time2PM,time2Temp,temp,oldHours=processTime(timePattern2,temp,2,2,time2)
+   
+        if(time2PM ==1 and oldHours!=12):
+          time1=updateTime(time1,time1Temp)
+
+      #print("finishing time is ",time2)
+        print("T2")
+
+
 
  else:
       print(" time not found")
