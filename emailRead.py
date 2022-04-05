@@ -11,7 +11,7 @@ import glob
 
 # account credentials
 # passwdFile ="Ar@667576"
-
+test = '123'
 user = "abinsaid0002@stu.kau.edu.sa"
 passwd = "Ar@667576"
 
