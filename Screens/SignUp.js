@@ -15,14 +15,7 @@ import {
   SafeAreaView,
 } from "react-native";
 import CheckBox from "expo-checkbox";
-
-import AuthContext from "../context/AuthContext";
-
-import { Formik } from "formik";
-import * as Yup from "yup";
-import axios from "axios";
 import { ScrollView } from "react-native-gesture-handler";
-import { Provider as AuthProvider } from "../context/AuthContext";
 
 const windowWidth = Dimensions.get("window").width;
 const windowHeight = Dimensions.get("window").height;
@@ -92,7 +85,7 @@ export default function SignUp(navigation) {
   const handleSubmit = () => {
     // setIsPending(true);
     try {
-      fetch("http://192.168.1.100:3001/signup", {
+      fetch("http://192.168.1.100:3000/signup", {
         method: "POST",
         headers: {
           Accept: "application/json",
