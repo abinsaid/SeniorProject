@@ -1,5 +1,5 @@
-const getUsrModel = require("./Back-end/models/usrModel");
-const getEventModel = require("./Back-end/models/eventModel");
+const usrModel = require("./Back-end/models/usrModel");
+const eventModel = require("./Back-end/models/eventModel");
 require("dotenv").config();
 const express = require("express");
 const mongoose = require("mongoose");
@@ -12,7 +12,6 @@ const eventTable = mongoose.model("events");
 // parse the coming Json info associtated with
 const bodyParser = require("body-parser");
 
-const router = express.Router()
 // const usrRouter = require("./Back-end/routes/usrRoutes");
 // const eventRouter = require("./Back-end/routes/usrRoutes");
 // const idCounter =0;
@@ -41,7 +40,7 @@ app.get("/", requireAuth, async (req, res) => {
   // res.send('this is working FINE!')
 
   try {
-    const users = await getUsrModel.find();
+    const users = await usrModel.find();
     console.log(users);
     res.json(users);
   } catch (err) {
@@ -84,12 +83,12 @@ app.get("/getEvent", async (req, res) => {
 
 console.log('we getting the events!!!');
 //   const {} = req.body;
-const event = await getEventModel.find();
-// const AnotherEvent = await getEventModel.findOne({ _id:'624a8204e92c14dbcd13f221'})
+const event = await eventModel.find();
+// const AnotherEvent = await eventModel.findOne({ _id:'624a8204e92c14dbcd13f221'})
 console.log(event)
 // console.log(event)
 res.send(event)
-//   getEventModel;
+//   eventModel;
 });
 //////////////////////////////////////////////////////////////////////////////////////
 //////////////////////////////////////////////////////////////////////////////////////
@@ -113,7 +112,7 @@ app.post("/signup", async (req, res) => {
   console.log(req.body);
   console.log(req.body.studName);
   try {
-    const user = new getUsrModel({
+    const user = new usrModel({
       studName,
       email,
       pass,
@@ -164,7 +163,7 @@ app.post("/addEvent", async (req, res) => {
   try {
     const event = new eventTable({ topic, instructor, startDate, endDate });
     await event.save();
-    res.send({ event });
+    res.send( event );
   } catch (err) {
     res.status(400).json({ message: err.message });
     console.log({ message: err.message });
@@ -177,4 +176,4 @@ app.post("/addEvent", async (req, res) => {
 
 app.listen(3000, () => console.log("listening..."));
 
-module.exports = router
+// module.exports = router
