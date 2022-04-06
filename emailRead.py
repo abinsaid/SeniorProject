@@ -85,7 +85,7 @@ def getEmailAttatchment():
  print('The number of current mails: ',numMsg)
  # print(imap.list)
  print('\n')
- counter = 16
+ counter = numMsg
  for i in range(messages, messages-N, -1):
     # fetch the email message by ID
     res, msg = imap.fetch(str(i), "(RFC822)")
@@ -146,7 +146,7 @@ def getEmailAttatchment():
                  print('Moved:', file)
                  txtBody= open(r"C:\Users\Ammar\Documents\GitHub\SeniorProject\mailsFolder\\"+str(counter)+".txt","w+",encoding='utf-8')
                  txtBody.write(str(body))
-                 counter=counter+1
+                 counter=counter-1
                  moveEmail(imap)
                  
 
