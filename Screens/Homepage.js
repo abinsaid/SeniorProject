@@ -15,7 +15,7 @@ import {
 const { width: WIDTH } = Dimensions.get("window");
 const windowWidth = Dimensions.get('window').width;
 const windowHeight = Dimensions.get('window').height;
-export default function Homepage() {
+export default function Login({ navigation }) {
   return (
     <ImageBackground source={require('../images/background.png')} style={styles.backgroundContainer}>
 
@@ -26,7 +26,13 @@ export default function Homepage() {
       <View style={styles.lowerView}>
         {/* <Text style={styles.homeText}>This is the Homepage screen!</Text> */}
        
-       
+        <TouchableOpacity style = {styles.btnEvent}
+          onPress={() => {
+            navigation.navigate("Events");
+          }}
+        >
+          <Text style= {styles.btnEvent}>Events Page</Text>
+        </TouchableOpacity>
      
       </View>
       </View>
@@ -67,8 +73,7 @@ export const styles = StyleSheet.create({
     // paddingBottom: 50,
     height: 650,
     borderRadius:105 ,
-    width:windowWidth *1,
-    
+    width:windowWidth *1
   },
   homeText: {
       marginTop: -150,
@@ -106,5 +111,3 @@ export const styles = StyleSheet.create({
 
  }
 });
-
-

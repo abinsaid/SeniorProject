@@ -120,4 +120,3 @@ if(topicCorrection!=0):
      f.writelines(oldTopic+"\n")
 f.writelines("==================================")
 f.writelines("\n")
-

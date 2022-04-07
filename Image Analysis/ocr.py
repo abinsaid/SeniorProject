@@ -42,3 +42,4 @@ def OCR2(imageName)  :
 
 
     
+    
