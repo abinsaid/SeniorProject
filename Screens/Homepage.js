@@ -110,8 +110,4 @@ export const styles = StyleSheet.create({
     // paddingBottom: 100
 
  }
-<<<<<<< HEAD
 });
-=======
-});
->>>>>>> db3a336f8d73156e0a36c6b1db32ab62604d5895
