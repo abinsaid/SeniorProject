@@ -9,7 +9,7 @@ import { NavigationContainer } from '@react-navigation/native';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import SignUp from "./Screens/SignUp";
 import Login from "./Screens/Login";
-import EventsScreen from "./Screens/EventsScreen"
+import Events from "./Screens/Events"
 import Homepage from "./Screens/Homepage"
 import Schedule from "./Screens/Schedule"
 import SmartSchedulingSystem from './Screens/SmartSchedulingSystem';

@@ -176,4 +176,8 @@ app.post("/addEvent", async (req, res) => {
 
 app.listen(3000, () => console.log("listening..."));
 
+<<<<<<< HEAD
 // module.exports = router
+=======
+// module.exports = router
+>>>>>>> db3a336f8d73156e0a36c6b1db32ab62604d5895
