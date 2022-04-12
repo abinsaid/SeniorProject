@@ -17,12 +17,13 @@ const windowWidth = Dimensions.get('window').width;
 const windowHeight = Dimensions.get('window').height;
 export default function Login({ navigation }) {
   return (
-    <ImageBackground source={require('../images/background.png')} style={styles.backgroundContainer}>
+    
+    <ImageBackground source={require('../FrontEndImages/lll.jpg')} style={styles.backgroundContainer}>
 
      
      {/* upper label */}
      <View>
-     <View style= {styles.upperView}><Text style= {styles.upperText}>This is the Homepage screen!</Text></View>
+     <View style= {styles.upperView}><Text style= {styles.upperText}>This is the Homepage!</Text></View>
       <View style={styles.lowerView}>
         {/* <Text style={styles.homeText}>This is the Homepage screen!</Text> */}
        
@@ -66,7 +67,7 @@ export const styles = StyleSheet.create({
    
   },
   lowerView: {
-    backgroundColor: "#fe6d73",
+    backgroundColor: "#2f6c9d",
     // marginTop: 10,
     alignItems: "center",
     paddingTop: 50,

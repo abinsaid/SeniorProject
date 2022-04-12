@@ -1,6 +1,5 @@
 const mongoose = require("mongoose");
 const bcrypt = require("bcrypt");
-// const { hash } = require("bcrypt");
 const userSchema = new mongoose.Schema({
   // the following varibales neeed to be the same names from the postman request
   studName: { type: String },
@@ -17,51 +16,34 @@ const userSchema = new mongoose.Schema({
 // this function encrypt the signed up password
 userSchema.pre('save', function (next) {
 
-  console.log('inside the userSchema.pre')
   const user = this;
   //if the user did not modify their password by the hashing algorithm, dont salt anything
+  // هنا بيشيك هل قد دخل الباسوورد في عملية هاشنق قبل كذا او لا
   if (!user.isModified("pass")) {
-    console.log('entering the IsModified function')
     return next();
   }
   // salt: random string of characters
   bcrypt.genSalt(10, (err, salt) => {
+    try{
     if (err) {
       return next(err);
     }
     // hash the user password
     bcrypt.hash(user.pass, salt, (err, hash) => {
-      console.log('entering the hash function')
       if (err) {
         return next(err);
       }
 
       // replace the normal password with the hashed one
       user.pass = hash;
+      console.log('hasing is Ok:',user.pass)
       next();
     });
-  });
+  } catch(err){
+    console.log(' : error in hashing!')
+  }
+
+});
 });                  
-
-/* this function is a comparsion between the existing password and the 
- password used in the log in */ 
-userSchema.methods.comparePasswordS = function (candidatePassword) {
-  const user = this;
-  return new Promise((resolve, reject) => {
-
-    //pass for test // hashed and // salted pass
-    bcrypt.compare(candidatePassword, user.pass, (err, isMatch) => {
-      if (err) {
-        return reject(err);
-      }
-
-      if (!isMatch) {
-        return reject(false);
-      }
-
-      resolve(true);
-    });
-  });
-};
 
 module.exports = mongoose.model("users", userSchema);
