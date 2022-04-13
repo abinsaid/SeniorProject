@@ -9,11 +9,13 @@ import { NavigationContainer } from '@react-navigation/native';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import SignUp from "./Screens/SignUp";
 import Login from "./Screens/Login";
-import Events from "./Screens/Events"
 import Homepage from "./Screens/Homepage"
-import Schedule from "./Screens/Schedule"
+import Calendar from "./Screens/Calendar"
 import SmartSchedulingSystem from './Screens/SmartSchedulingSystem';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
+import Events from './Screens/Events';
+import addEventCalc from './Screens/addEventCalc';
+import daysPage from './Screens/daysPage';
 
 
 const Stack = createNativeStackNavigator();
@@ -26,14 +28,13 @@ export default function StackNavigator() {
   <Stack.Screen name = "start up" component={SmartSchedulingSystem}/>
   <Stack.Screen name = "Login" component={Login}/>
   <Stack.Screen name = "SignUp" component={SignUp}/>
+  <Stack.Screen name='daysPage' component={daysPage}/> 
+  <Stack.Screen name='addEventCalc' component={addEventCalc}/>
   <Stack.Screen name = "Home" component={Tabs} options={{ headerShown: false}}/>
   </Stack.Navigator>
 </NavigationContainer>
- 
  );
 }
-
-
 function Tabs(){
   return(
     <Tab.Navigator
@@ -47,7 +48,7 @@ function Tabs(){
       elevation:0,
       backgroundcolor: 'white',
       borderRadius: 15,
-      height:90,
+      height:69,
       ...styles.shadow
     }}}
     >
@@ -65,13 +66,13 @@ function Tabs(){
           }}/>
         <Text
         style={{color: focused? 'red':'black', fontSize:10,right:2}}>
-       HOME
+       Home
       </Text>
           </View>
         ),
       }}      
       />
-      <Tab.Screen name = "Events" component={EventsScreen}
+      <Tab.Screen name = "Events" component={Events}
       options={{
         tabBarIcon:({focused})=>(
           <View style={{alignitems:'center',JustifyContent:'center', top:9}}>
@@ -91,7 +92,7 @@ function Tabs(){
         ),
       }}      
       />
-      <Tab.Screen name = "Schedule" component={Schedule}
+      <Tab.Screen name = "Calendar" component={Calendar}
       options={{
         tabBarIcon:({focused})=>(
           <View style={{alignitems:'center',JustifyContent:'center', top:9}}>
@@ -104,13 +105,14 @@ function Tabs(){
             tintColor: focused? 'red':'black',
           }}/>
         <Text
-        style={{color: focused? 'red':'black', fontSize:10,right:5}}>
+        style={{color: focused? 'red':'black', fontSize:10,right:7}}>
        Schedule
       </Text>
           </View>
         ),
       }}      
       />
+
     </Tab.Navigator>
     
   )
