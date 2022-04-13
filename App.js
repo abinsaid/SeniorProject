@@ -1,10 +1,10 @@
 import * as React from 'react';
 import {
   StyleSheet,
-  View,
-  Image,
-  Text
+  Button,
+  Dimensions,
 } from "react-native";
+import { TextInput } from "react-native-gesture-handler";
 import { NavigationContainer } from '@react-navigation/native';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import SignUp from "./Screens/SignUp";
@@ -114,18 +114,5 @@ function Tabs(){
       />
 
     </Tab.Navigator>
-    
   )
 }
-const styles = StyleSheet.create({
-  shadow:{
-    shadowColor:'black',
-    shadowOffset:{
-      width: 0,
-      height:10
-    },
-    shadowOpacity:0.35,
-    shadowRadius:3.5,
-    elevation:5
-  }
-})

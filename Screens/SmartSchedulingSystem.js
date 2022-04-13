@@ -14,9 +14,9 @@ const {width: WIDTH } = Dimensions.get('window')
 export default function SmartSchedulingSystem({ navigation }) {
 
   return (
-    <ImageBackground source={require('../images/background.png')} style={styles.backgroundContainer}>
+    <ImageBackground source={require('../FrontEndImages/lll.jpg')} style={styles.backgroundContainer}>
       <View>
-        <Image source={require('../images/icon.png')} style={styles.icon} />
+        <Image source={require('../FrontEndImages/icon.png')} style={styles.icon} />
         <Text style={styles.iconText}>Smart Scheduling System</Text>
         <Text style={styles.subIconText}>For every minute spent organizing, an hour is earned.</Text>
       </View>
