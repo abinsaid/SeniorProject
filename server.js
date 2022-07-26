@@ -3,6 +3,8 @@ const eventModel = require("./Back-end/models/eventModel");
 require("dotenv").config();
 const express = require("express");
 const mongoose = require("mongoose");
+
+//Cross-Origin Resource Sharing
 const cors = require("cors");
 const bcrypt = require("bcrypt");
 const usrTable= mongoose.model("users");
@@ -14,7 +16,6 @@ const bodyParser = require("body-parser");
 const app = express();
 
 app.use(cors());
-// app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
 
 mongoose.connect("mongodb+srv://Byanati:AAA123321@cluster0.kioeq.mongodb.net/ProjectDB?retryWrites=true&w=majority", { useNewUrlParser: true });
@@ -26,7 +27,7 @@ db.once("open", () => console.log("connected to database"));
 //////////////////////////////////////////////////////////////////////////////////////
 //////////////////////////////////////////////////////////////////////////////////////
 //////////////////////////////////////////////////////////////////////////////////////
-// in anytime someone call sign in routes:
+
 app.post("/Login", async (req, res, next) => {
   console.log("\n user sign in post request Accepted!");
   
@@ -119,13 +120,8 @@ app.post("/signup", async (req, res) => {
   const {
     studName,
     email,
-    pass,
-    intrest1,
-    intrest2,
-    intrest3,
-    intrest4,
-    intrest5,
-    intrest6,
+    pass
+    
   } = req.body;
   // console.log(req.body);
   console.log(req.body.studName);
@@ -133,13 +129,8 @@ app.post("/signup", async (req, res) => {
     const user = new usrTable({
       studName,
       email,
-      pass,
-      intrest1,
-      intrest2,
-      intrest3,
-      intrest4,
-      intrest5,
-      intrest6,
+      pass
+      
     });
   
     await user.save();
@@ -160,11 +151,6 @@ app.post("/signup", async (req, res) => {
 //////////////////////////////////////////////////////////////////////////////////////
 //////////////////////////////////////////////////////////////////////////////////////
 //////////////////////////////////////////////////////////////////////////////////////
-
-// app.get('/getEvent', async (req,res)=>{
-//     const {topic,instructor,startDate,endDate} = req.body
-// })
-
 app.post("/addEvent", async (req, res) => {
   console.log("==============================================");
   console.log("\n event post request Accepted!\n");
