@@ -35,68 +35,60 @@ export default function SignUp(navigation) {
 
   const [pass, setPassword] = useState("");
   
-  const [intrest1, setIntrest1] = useState(false);
-  const [intrest2, setIntrest2] = useState(false);
-  const [intrest3, setIntrest3] = useState(false);
-  const [intrest4, setIntrest4] = useState(false);
-  const [intrest5, setIntrest5] = useState(false);
-  const [intrest6, setIntrest6] = useState(false);
+  // const [intrest1, setIntrest1] = useState(false);
+  // const [intrest2, setIntrest2] = useState(false);
+  // const [intrest3, setIntrest3] = useState(false);
+  // const [intrest4, setIntrest4] = useState(false);
+  // const [intrest5, setIntrest5] = useState(false);
+  // const [intrest6, setIntrest6] = useState(false);
 
   const onClickListener = () => {
     if (studName) {
       if (email) {
         if (pass) {
           if(email.includes('@stu.kau.edu.sa')){
-            console.log('student email has been registered')
-            handleSubmit();
-           } else { console.log("wrong email: only student emails allowed!")}
-          // console.log({ student });
+            // Alert.alert('student has been registered')
+            try {
+              fetch("http://172.20.10.2:3000/signup", {
+                method: "POST",
+                headers: {
+                  Accept: "application/json",
+                  "Content-Type": "application/json",
+                },
+                body: JSON.stringify({
+                  studName,
+                  email,
+                  pass
+                }),
+              })
+                .then((response) => response.json())
+                .then((json) => Alert.alert(json)
+                );
+            } catch (err) {
+              Alert.alert("Connection is wrong!");
+            }
+            Alert.alert('student has been registered')
+           } else { Alert.alert("wrong email: only student emails allowed!")}
+          // Alert.alert({ student });
           
         } else {
-          console.log("pls enter password");
+          Alert.alert("pls enter password");
         }
       } else {
-        console.log("pls enter email");
+        Alert.alert("pls enter email");
       }
     } else {
-      console.log("pls enter student name");
+      Alert.alert("pls enter student name");
     }
-  };
-  const handleSubmit = () => {
-    // setIsPending(true);
-    if(intrest1==false && intrest2 == false && intrest3 == false
-    && intrest4==false && intrest5 == false && intrest6 == false){
-      console.log('you must choose atleast one intrest')
-    } else {
+  // };
+  // const handleSubmit = () => {
+  //   // setIsPending(true);
+  //   if(intrest1==false && intrest2 == false && intrest3 == false
+  //   && intrest4==false && intrest5 == false && intrest6 == false){
+  //     Alert.alert('you must choose atleast one intrest')
+  //   } else {
 
-    
-    try {
-      fetch("http://192.168.1.100:3000/signup", {
-        method: "POST",
-        headers: {
-          Accept: "application/json",
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify({
-          studName,
-          email,
-          pass,
-          intrest1,
-          intrest2,
-          intrest3,
-          intrest4,
-          intrest5,
-          intrest6,
-        }),
-      })
-        .then((response) => response.json())
-        .then((json) => console.log(json)
-        );
-    } catch (err) {
-      console.log("Connection is wrong!");
-    }
-    
-  };
+  // };
 }
   return (
     <>
@@ -133,75 +125,6 @@ export default function SignUp(navigation) {
           ></TextInput>
 
           <Text></Text>
-          <View style={styles.checkboxContainer}>
-            <CheckBox
-              style={styles.checkbox}
-              disabled={false}
-              placeholder="IT"
-              value={intrest1}
-              onValueChange={(newValue) => setIntrest1(newValue)}
-            />
-            <Text style={styles.label}> IT related</Text>
-          </View>
-          {/* ////////////////////////// */}
-
-          <View style={styles.checkboxContainer}>
-            <CheckBox
-              style={styles.checkbox}
-              disabled={false}
-              placeholder="cyber"
-              value={intrest2}
-              onValueChange={(newValue) => setIntrest2(newValue)}
-            />
-            <Text style={styles.label}> Cyber Security </Text>
-          </View>
-          {/* ////////////////////////// */}
-
-          <View style={styles.checkboxContainer}>
-            <CheckBox
-              style={styles.checkbox}
-              disabled={false}
-              placeholder="AI"
-              value={intrest3}
-              onValueChange={(newValue) => setIntrest3(newValue)}
-            />
-            <Text style={styles.label}> AI related</Text>
-          </View>
-          {/* ////////////////////////// */}
-
-          <View style={styles.checkboxContainer}>
-            <CheckBox
-              style={styles.checkbox}
-              disabled={false}
-              placeholder="game"
-              value={intrest4}
-              onValueChange={(newValue) => setIntrest4(newValue)}
-            />
-            <Text style={styles.label}> Game development </Text>
-          </View>
-          {/* ////////////////////////// */}
-          <View style={styles.checkboxContainer}>
-            <CheckBox
-              style={styles.checkbox}
-              disabled={false}
-              placeholder="Web"
-              value={intrest5}
-              onValueChange={(newValue) => setIntrest5(newValue)}
-            />
-            <Text style={styles.label}> Web development </Text>
-          </View>
-          {/* ////////////////////////// */}
-          <View style={styles.checkboxContainer}>
-            <CheckBox
-              style={styles.checkbox}
-              disabled={false}
-              placeholder="other"
-              value={intrest6}
-              onValueChange={(newValue) => setIntrest6(newValue)}
-            />
-       
-            <Text style={styles.label}> other </Text>
-          </View>
         </ScrollView>
         {/* for new lines: */}
         <Text>

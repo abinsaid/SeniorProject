@@ -1,0 +1,15 @@
+
+{
+    "date": "2021-09-29",
+    "day": "Wednesday",
+    "endingTime": "13:00",
+    "image_url": "",
+    "instructor": "الأستاذة / سمر کردي",
+    "interestManagment": "1",
+    "intrestSoftSkills": "0",
+    "intrestTechnology": "0",
+    "link": "",
+    "online": "online",
+    "startingTime": "11:00",
+    "topic": "مهارات إدارة الوقت "
+}

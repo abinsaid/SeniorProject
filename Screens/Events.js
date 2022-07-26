@@ -17,51 +17,19 @@ import {
   ActivityIndicator,
 } from "react-native";
 import { FlatList } from "react-native-gesture-handler";
-const listTab =[
-  {
-    status: 'Discover more'
-  },
-  {
-    status: 'Softskills'
-  },
-  {
-    status: 'Sport'
-  },
-  {
-    status: 'Economic'
-  },
-  {
-    status: 'Management'
-  },
-  {
-    status: 'Computer'
-  },
-]
-// const updateEvent = () =>{
-
-//   setInterval(setData( u()),  60 * 2000)
-// }
-
 export default function Events() {
-  // const data =[
-  //   {
-  //     topic:'دورة الثقافة',
-  //     status:'white'
-  //   },
-  //   {
-  //     topic:'دورة السايبر',
-  //     status:'Black'
-  //   },
-  //   {
-  //     topic:'دورة العلم',
-  //     status:'Green'
-  //   }
-  //   ]
-  // const [data, setData] = useState([]);
    const [data,setData] = useState([])
+   const openUrl = async (url) =>{
+     const isSupported = await Linking.canOpenURL(url)
+     if(isSupported){
+       await Linking.openURL(url)
+     } else{
+       Alert.alert('url is not working')
+     }
+   }
   // const [status,setStatus] = useState('other')
   useEffect(() => {
-    fetch("http://192.168.1.100:3000/getEvent")
+    fetch("http://172.20.10.2:3000/getEvent")
       .then((response) => response.json())
       .then((json) => {
         setData(json);
@@ -73,40 +41,6 @@ export default function Events() {
       .catch((error) => alert(error))
   },[]);
 
-
-  // useEffect(()=>{
-  //   setInterval(()=>{
-  //     fetch("http://192.168.1.100:3000/getEvent")
-  //     .then((response) => response.json())
-  //     .then((json) => {
-  //       setData(json);
-  
-  //       console.log("========================");
-  //       console.log(data);
-  //       console.log("========================");
-  //     })
-  //     .catch((error) => alert(error))
-
-
-  //   }, 60*2000)
-  // },[])
-
-  // const setStatusFilter = status =>{
-  //   setStatus(status)
-  // }
-  //  const renderItem = ({item, index})=>{
-
-  //      <View key={index} style ={styles.itemContainer}
-       
-  //     >
-  //     <View style= {styles.itemBody}>
-  //     <Text style={styles.topic}>{item.topic}</Text>
-  //      </View>
-       
-  //     </View>
- 
-  // }
- 
   return (
     <SafeAreaView>
     <View style={{}}>
@@ -115,26 +49,49 @@ export default function Events() {
         data={data}
         keyExtractor={({ id }, index) => id}
         renderItem={({ item }) => (
+          
+          // if(item.Technology == '0'){
+          //   item.Technology = 'something'
+          // }
+          
           <View
             style={{
+              textAlign:"left",
               paddingBottom: 10,
               borderBottomWidth: 1,
               marginBottom: 12,
             }}
           >
             <Text style={styles.eventText}>
-          {item.instructor} , {item.Topic}
+    Instructor: {item.Instructor} 
+    {"\n"} 
+    Topic: {item.Topic}
     {"\n"}
-    {item.Day} , From {item.Starting} | to {item.Ending} 
+    Date: {item.Date}
     {"\n"}
-    {item.Date} 
-    {"\n"}  
-  
-  
-    <TouchableOpacity style={styles.LinkText} onPress={ ()=> 
-  Linking.openURL(item.link) } ><Text style={styles.btnLink} >رابط التسجيل</Text></TouchableOpacity>
+    Day: {item.Day}            <TouchableOpacity style={styles.LinkText} onPress={ ()=> 
+  openUrl(item.Link) } ><Text style={styles.btnLink} >رابط التسجيل</Text></TouchableOpacity>
+    {"\n"} 
+    From {item.Starting} | to {item.Ending} 
+    {"\n"}
+    category:
+    {item.Technology == '0' ?  
+    
+     <Text></Text>
+     : <Text>Technology, </Text>} 
+     {item.SoftSkills == '0' ?  
+    
+     <Text></Text>
+     : <Text>SoftSkills, </Text>} 
+     {item.Managment == '0' ?  
+    
+     <Text></Text>
+     : <Text>Management</Text>}
+     {"\n"}
+    
         </Text>
           </View>
+         
         )}
       />
     </View>
@@ -152,7 +109,7 @@ const styles = StyleSheet.create({
     fontSize: 20,
     fontWeight: "200",
 
-    textAlign: "center",
+    textAlign: "left",
     // borderWidth: 1,
     // borderColor: "thistle",
     borderRadius: 50,
@@ -169,8 +126,7 @@ const styles = StyleSheet.create({
   },
   LinkText: {
    color:'#4361ee',
-   textDecorationLine: 'underline'
-
+   textDecorationLine: 'underline',
   },
   btnLink: {
     fontWeight: "bold",
@@ -178,6 +134,7 @@ const styles = StyleSheet.create({
     color: "#003049",
     backgroundColor: "#48cae4",
     // width: windowWidth - 300,
+    alignItems:'center',
     textAlign: "center",
     borderRadius: 170,
     marginLeft: 20,

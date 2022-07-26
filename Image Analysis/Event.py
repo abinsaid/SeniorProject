@@ -1,19 +1,17 @@
 
 class Event:
-  def __init__(self, topic, date,day,instructor,time1,time2):
+  def __init__(self, topic, date,day,instructor,startingTime,endingTime,link,online,intrestTechnology,intrestSoftSkills,interestManagment,image_url):
     self.topic = topic
     self.date = date
     self.day = day
     self.instructor = instructor
-    self.time1 = time1
-    self.time2 = time2
+    self.startingTime = startingTime
+    self.endingTime = endingTime
+    self.link = link
+    self.online = online
+    self.intrestTechnology = intrestTechnology
+    self.intrestSoftSkills = intrestSoftSkills
+    self.interestManagment = interestManagment
+    self.image_url = image_url
 
-
-# def get_topic(self):
-#         return self._topic
-
-# def get_day(self):
-#         return self._day
-
-# def get_date(self):
-#         return self._date
+  

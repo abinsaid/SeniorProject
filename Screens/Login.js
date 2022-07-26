@@ -1,6 +1,6 @@
 
 import React, { useState, useEffect } from 'react';
-import { Text, StyleSheet, View,Linking, Button, TouchableOpacity, TextInput, ImageBackground, Dimensions, SafeAreaView } from 'react-native';
+import { Text, StyleSheet, View,Linking, Button, TouchableOpacity, TextInput, ImageBackground, Dimensions, SafeAreaView, Alert } from 'react-native';
 //   import {GoogleSignin,GoogleSigninButton,statusCodes} from 'react-native-google-signin';
 const {width: WIDTH } = Dimensions.get('window')
 
@@ -17,13 +17,13 @@ export default function Login({ navigation }) {
 
 ///////////////////////////////////////////////////////////////////
   const handleValidation = () => {
-//  console.log('inside handleValidation')
+//  Alert.alert('inside handleValidation')
   //   if (!pass || !email.includes('@stu.kau.edu.sa') )  {
      
-  //     console.log(" Most provide valid email and password!\n");
+  //     Alert.alert(" Most provide valid email and password!\n");
   //  }  else { 
      try{
-    fetch("http://192.168.1.100:3000/Login", {
+    fetch("http://172.20.10.2:3000/Login", {
       method: "POST",
       headers: {
         Accept: "application/json",
@@ -35,28 +35,28 @@ export default function Login({ navigation }) {
       }),
     }).then((response) => 
             {
-              // console.log(inputPass)
-              // console.log('inside response')
+              // Alert.alert(inputPass)
+              // Alert.alert('inside response')
               if(response.status == '400'){
-              console.log("error: email is not registered")
+              Alert.alert("error: email is not registered")
             } else if(response.status == '401'){
-              console.log('error: Most provide email and password!')
+              Alert.alert('error: Most provide email and password!')
             } else if(response.status == '402'){
-              console.log('error: provided password comparision is wrong')
+              Alert.alert('error: provided password comparision is wrong')
             } else if(response.status == '403'){
-              console.log('error: wrong email')
+              Alert.alert('error: wrong email')
             } else if(response.status == '406'){
-              console.log('error: wrong password')
+              Alert.alert('error: wrong password')
             }
             else if(response.status == '200'){
-              console.log('Correct log in!')
-              navigation.navigate("Home")
-            } else{  console.log("None of the if's are working ")
-                    console.log(response.status)}
+              Alert.alert('Correct log in!')
+              navigation.navigate("Homepage")
+            } else{  Alert.alert("None of the if's are working ")
+                    Alert.alert(response.status)}
           })
   } catch (err) {
-    console.log("Connection is wrong!");
-        // console.log(json.user)
+    Alert.alert("Connection is wrong!");
+        // Alert.alert(json.user)
     }
   }
     return (

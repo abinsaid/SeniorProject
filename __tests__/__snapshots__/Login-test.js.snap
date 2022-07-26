@@ -1,0 +1,303 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`renders correctly 1`] = `
+<View
+  accessibilityIgnoresInvertColors={true}
+  style={
+    Object {
+      "alignItems": "center",
+      "flex": 1,
+      "height": null,
+      "justifyContent": "center",
+      "width": null,
+    }
+  }
+>
+  <Image
+    source={
+      Object {
+        "testUri": "../../../FrontEndImages/lll.jpg",
+      }
+    }
+    style={
+      Array [
+        Object {
+          "bottom": 0,
+          "left": 0,
+          "position": "absolute",
+          "right": 0,
+          "top": 0,
+        },
+        Object {
+          "height": null,
+          "width": null,
+        },
+        undefined,
+      ]
+    }
+  />
+  <View
+    style={
+      Object {
+        "backgroundColor": "white",
+        "borderRadius": 21,
+        "flex": 0.9,
+        "marginTop": 100,
+        "opacity": 0.5,
+        "padding": 40,
+        "position": "absolute",
+      }
+    }
+  >
+    <Text
+      style={
+        Object {
+          "fontSize": 30,
+          "textAlign": "center",
+        }
+      }
+    >
+      Login to your account
+    </Text>
+    <Text>
+      
+
+    </Text>
+    <Text
+      style={
+        Object {
+          "color": "black",
+          "fontSize": 21,
+          "fontWeight": "bold",
+        }
+      }
+    >
+      Email:
+    </Text>
+    <TextInput
+      allowFontScaling={true}
+      onChangeText={[Function]}
+      rejectResponderTermination={true}
+      style={
+        Object {
+          "backgroundColor": "#e8e8e4",
+          "borderColor": "black",
+          "borderRadius": 7,
+          "borderWidth": 1,
+          "fontSize": 22,
+          "height": 66.7,
+          "paddingRight": 10,
+          "width": 600,
+        }
+      }
+      underlineColorAndroid="transparent"
+      value=""
+    />
+    <Text>
+      
+
+    </Text>
+    <Text
+      style={
+        Object {
+          "color": "black",
+          "fontSize": 21,
+          "fontWeight": "bold",
+        }
+      }
+    >
+      Password:
+    </Text>
+    <TextInput
+      allowFontScaling={true}
+      onChangeText={[Function]}
+      rejectResponderTermination={true}
+      style={
+        Object {
+          "backgroundColor": "#e8e8e4",
+          "borderColor": "black",
+          "borderRadius": 7,
+          "borderWidth": 1,
+          "fontSize": 22,
+          "height": 66.7,
+          "paddingRight": 10,
+          "width": 600,
+        }
+      }
+      underlineColorAndroid="transparent"
+      value=""
+    />
+  </View>
+  <View>
+    <Text>
+      
+
+    </Text>
+    <Text>
+      
+
+       
+      
+
+       
+      
+
+       
+      
+
+       
+      
+
+       
+      
+
+       
+      
+
+       
+      
+
+      
+
+       
+      
+
+       
+      
+
+       
+      
+
+       
+      
+
+       
+      
+
+       
+      
+
+       
+      
+
+      
+
+       
+      
+
+       
+      
+
+       
+      
+
+       
+      
+
+       
+      
+
+       
+      
+
+       
+      
+
+      
+
+       
+      
+
+       
+      
+
+       
+      
+
+       
+      
+
+    </Text>
+    <View
+      accessible={true}
+      focusable={true}
+      onClick={[Function]}
+      onResponderGrant={[Function]}
+      onResponderMove={[Function]}
+      onResponderRelease={[Function]}
+      onResponderTerminate={[Function]}
+      onResponderTerminationRequest={[Function]}
+      onStartShouldSetResponder={[Function]}
+      style={
+        Object {
+          "opacity": 1,
+        }
+      }
+    >
+      <Text
+        style={
+          Object {
+            "backgroundColor": "#008192",
+            "borderRadius": 205,
+            "color": "#d8e2dc",
+            "fontSize": 22,
+            "fontWeight": "bold",
+            "height": 45,
+            "paddingTop": 7,
+            "textAlign": "center",
+            "width": 500,
+          }
+        }
+      >
+        Login
+      </Text>
+    </View>
+    <Text
+      style={
+        Object {
+          "color": "#d8e2dc",
+          "fontWeight": "bold",
+          "marginTop": 30,
+        }
+      }
+    >
+      don't have an account? 
+    </Text>
+    <View
+      accessible={true}
+      focusable={true}
+      onClick={[Function]}
+      onResponderGrant={[Function]}
+      onResponderMove={[Function]}
+      onResponderRelease={[Function]}
+      onResponderTerminate={[Function]}
+      onResponderTerminationRequest={[Function]}
+      onStartShouldSetResponder={[Function]}
+      style={
+        Object {
+          "opacity": 1,
+        }
+      }
+    >
+      <Text
+        style={
+          Object {
+            "backgroundColor": "#008192",
+            "borderRadius": 205,
+            "color": "#d8e2dc",
+            "fontSize": 22,
+            "fontWeight": "bold",
+            "height": 45,
+            "marginBottom": 30,
+            "paddingTop": 7,
+            "textAlign": "center",
+            "width": 500,
+          }
+        }
+      >
+        Sign Up
+      </Text>
+    </View>
+  </View>
+</View>
+`;

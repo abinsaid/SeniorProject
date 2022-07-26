@@ -1927,3 +1927,4 @@ def myReg(myImage) :
 #print(listDates)
 
 myReg("40.jpg")
+

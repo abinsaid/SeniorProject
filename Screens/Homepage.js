@@ -15,7 +15,7 @@ import {
 const { width: WIDTH } = Dimensions.get("window");
 const windowWidth = Dimensions.get('window').width;
 const windowHeight = Dimensions.get('window').height;
-export default function Login({ navigation }) {
+export default function Homepage({ navigation }) {
   return (
     
     <ImageBackground source={require('../FrontEndImages/lll.jpg')} style={styles.backgroundContainer}>
@@ -23,17 +23,22 @@ export default function Login({ navigation }) {
      
      {/* upper label */}
      <View>
-     <View style= {styles.upperView}><Text style= {styles.upperText}>This is the Homepage!</Text></View>
+     <View style= {styles.upperView}><Text style= {styles.upperText}>Welcome!</Text></View>
       <View style={styles.lowerView}>
-        {/* <Text style={styles.homeText}>This is the Homepage screen!</Text> */}
-       
-        <TouchableOpacity style = {styles.btnEvent}
+      
+          
+
+          <Text style={{textAlign:"center" , fontSize:30, color:'white'}}>
+          Thank you for choosing our app
+ Our app will provide you with a list of KAU events that you can view and chose the one that suits you 
+          </Text>
+        {/* <TouchableOpacity style = {styles.btnEvent}
           onPress={() => {
             navigation.navigate("Events");
           }}
         >
           <Text style= {styles.btnEvent}>Events Page</Text>
-        </TouchableOpacity>
+        </TouchableOpacity> */}
      
       </View>
       </View>
@@ -64,6 +69,13 @@ export const styles = StyleSheet.create({
     fontWeight:'bold',
     fontSize: 30,
      color:'#bde0fe'
+   
+  },
+  upperText2: {
+    
+    fontWeight:'bold',
+    fontSize: 20,
+     color:'white'
    
   },
   lowerView: {

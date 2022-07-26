@@ -4,13 +4,7 @@ const userSchema = new mongoose.Schema({
   // the following varibales neeed to be the same names from the postman request
   studName: { type: String },
   email: { type: String, unique: true },
-  pass: { type: String },
-  intrest1: { type: Boolean },
-  intrest2: { type: Boolean },
-  intrest3: { type: Boolean },
-  intrest4: { type: Boolean },
-  intrest5: { type: Boolean },
-  intrest6: { type: Boolean },
+  pass: { type: String }
 });
 // we are using this function instead of arrow function to use the 'this.'
 // this function encrypt the signed up password

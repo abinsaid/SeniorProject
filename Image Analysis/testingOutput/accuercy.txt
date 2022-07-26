@@ -1,0 +1,501 @@
+1.png
+both topics are the same
+both instructors are the same
+both dates are the same
+both starting time are the same
+both ending time are the same
+both online are the same
+Image day : Wednsday
+OCR day : Wednesday
+Image Topic : مهارات إدارة الوقت
+OCR Topic : مهارات إدارة الوقت 
+Image Instructor : سمر كردي
+OCR Instructor : الأستاذة / سمر کردي
+Image Date : 2021-09-29
+OCR Date : 2021-09-29
+Image Starting : 11:00
+OCR starting : 11:00
+Image ending : 13:00
+OCR ending : 13:00
+Image online : online
+OCR online : online
+=============================================
+2.png
+both instructors are the same
+both dates are the same
+both starting time are the same
+both ending time are the same
+both online are the same
+Image day : Tuesday
+OCR day : Thursday
+Image Topic : قاعدة بيانات
+OCR Topic : قاعدة بيانات IEEE 
+Image Instructor : رانبير سيدهي
+OCR Instructor : المهندس / رانبيير سيدھي
+Image Date : 2021-10-12
+OCR Date : 2021-10-12
+Image Starting : 10:00
+OCR starting : 10:00
+Image ending : 11:00
+OCR ending : 11:00
+Image online : online
+OCR online : Online
+=============================================
+3.png
+both days are the same
+both topics are the same
+both instructors are the same
+both starting time are the same
+both ending time are the same
+Image day : Wednesday
+OCR day : Wednesday
+Image Topic : بناء الشخصية و تطوير الذات
+OCR Topic : بناء الشخصية وتطوير الذات 
+Image Instructor : علي حسين
+OCR Instructor : د. علي حسين 
+Image Date : 2021-10-27
+OCR Date : 0.0
+Image Starting : 20:00
+OCR starting : 20:00
+Image ending : 22:00
+OCR ending : 22:00
+Image online : online
+OCR online : in Person
+=============================================
+4.png
+both days are the same
+both topics are the same
+both instructors are the same
+both dates are the same
+both starting time are the same
+both online are the same
+Image day : Wednesday
+OCR day : Wednesday
+Image Topic : الأمن السيبراني
+OCR Topic : الأمن السيبراني 
+Image Instructor : سعود واصلي
+OCR Instructor : د. سعود واصلي
+Image Date : 2022-02-23
+OCR Date : 2022-02-23
+Image Starting : 16:30
+OCR starting : 16:30
+Image ending : 18:00
+OCR ending : 13:00
+Image online : online
+OCR online : Online
+=============================================
+5.png
+both topics are the same
+both instructors are the same
+both dates are the same
+both starting time are the same
+both ending time are the same
+both online are the same
+Image day : Tuesday
+OCR day : Thursday
+Image Topic : قاعدة بيانات LINK SPRINGER
+OCR Topic : قاعدة بيانات LINK SPRINGER 
+Image Instructor : لين سماره
+OCR Instructor : الأستاذة / لين سماره
+Image Date : 2021-10-12
+OCR Date : 2021-10-12
+Image Starting : 20:20
+OCR starting : 20:20
+Image ending : 21:20
+OCR ending : 21:20
+Image online : online
+OCR online : Online
+=============================================
+6.png
+both days are the same
+both topics are the same
+both instructors are the same
+both dates are the same
+both starting time are the same
+both ending time are the same
+Image day : Sunday
+OCR day : Sunday
+Image Topic : مقدمة في علم البيانات و تحليلها
+OCR Topic : البيانات وتحليلها 
+Image Instructor : نبيل البشري
+OCR Instructor :  د. نبيل البشري
+Image Date : 2021-03-28
+OCR Date : 2021-03-28
+Image Starting : 08:45
+OCR starting : 08:45
+Image ending : 10:45
+OCR ending : 10:45
+Image online : online
+OCR online : in Person
+=============================================
+7.png
+both days are the same
+both instructors are the same
+both dates are the same
+both starting time are the same
+both ending time are the same
+both online are the same
+Image day : Monday
+OCR day : Monday
+Image Topic : تصميم الجرافيكس
+OCR Topic : 1/5 من سسلة عطاء تقني 
+Image Instructor : عبدالله الكثيري
+OCR Instructor : عبدالله الكثيري 
+Image Date : 2021-11-22
+OCR Date : 2021-11-22
+Image Starting : 20:15
+OCR starting : 20:15
+Image ending : 22:00
+OCR ending : 22:00
+Image online : online
+OCR online : Online
+=============================================
+8.png
+both days are the same
+both topics are the same
+both instructors are the same
+both dates are the same
+both starting time are the same
+both online are the same
+Image day : Monday
+OCR day : Monday
+Image Topic : مهارات توظيف الحوسبة السحابية في البحث العلمي
+OCR Topic : الباحث الجديديقدم اللقاء العلمي بعنوانمهارات توظيف الحوسبة السحابية في البحث العلميالمدرب باریان
+Image Instructor : عادل سالم
+OCR Instructor : Instructor not Found
+Image Date : 2022-02-28
+OCR Date : 2022-02-28
+Image Starting : 20:30
+OCR starting : 20:30
+Image ending : 0
+OCR ending : 17:30
+Image online : in Person
+OCR online : in Person
+=============================================
+9.png
+both days are the same
+both topics are the same
+both instructors are the same
+both dates are the same
+both online are the same
+Image day : Tuesday
+OCR day : Tuesday
+Image Topic : الكشف عن الاستلال
+OCR Topic : الكشف عن الاستلال 
+Image Instructor : ليلى محمد
+OCR Instructor : د. ليلى محمد 
+Image Date : 2022-01-18
+OCR Date : 2022-01-18
+Image Starting : 15:00
+OCR starting : 43:00
+Image ending : 17:00
+OCR ending : 20:00
+Image online : in Person
+OCR online : in Person
+=============================================
+10.png
+both days are the same
+both topics are the same
+both instructors are the same
+both dates are the same
+both online are the same
+Image day : Tuesday
+OCR day : Tuesday
+Image Topic : البرمجة بالجافا
+OCR Topic : أساسيات 
+Image Instructor : نايف العتيبي
+OCR Instructor : د. نايف العتيبي
+Image Date : 2021-02-23
+OCR Date : 2021-02-23
+Image Starting : 17:00
+OCR starting : 0
+Image ending : 20:00
+OCR ending : 
+Image online : in Person
+OCR online : in Person
+=============================================
+11.png
+both days are the same
+both instructors are the same
+both dates are the same
+both starting time are the same
+both ending time are the same
+both online are the same
+Image day : Sunday
+OCR day : Sunday
+Image Topic : منصة ذكية لاستدامة التعليم
+OCR Topic : الثقافيةمحاضرةالتعليم الرقمي: منصة
+Image Instructor : ميادة المصري
+OCR Instructor : د.ميادة المصري
+Image Date : 2022-01-30
+OCR Date : 2022-01-30
+Image Starting : 09:00
+OCR starting : 09:00
+Image ending : 10:30
+OCR ending : 10:30
+Image online : online
+OCR online : Online
+=============================================
+accuercy : 80.49%
+1.png
+both topics are the same
+both instructors are the same
+both dates are the same
+both starting time are the same
+both ending time are the same
+both online are the same
+Image day : Wednsday
+OCR day : Wednesday
+Image Topic : مهارات إدارة الوقت
+OCR Topic : مهارات إدارة الوقت 
+Image Instructor : سمر كردي
+OCR Instructor : الأستاذة / سمر کردي
+Image Date : 2021-09-29
+OCR Date : 2021-09-29
+Image Starting : 11:00
+OCR starting : 11:00
+Image ending : 13:00
+OCR ending : 13:00
+Image online : online
+OCR online : online
+=============================================
+accuercy : 85.68%
+1.png
+both topics are the same
+both instructors are the same
+both dates are the same
+both starting time are the same
+both ending time are the same
+both online are the same
+Image day : Wednsday
+OCR day : Wednesday
+Image Topic : مهارات إدارة الوقت
+OCR Topic : مهارات إدارة الوقت 
+Image Instructor : سمر كردي
+OCR Instructor : الأستاذة / سمر کردي
+Image Date : 2021-09-29
+OCR Date : 2021-09-29
+Image Starting : 11:00
+OCR starting : 11:00
+Image ending : 13:00
+OCR ending : 13:00
+Image online : online
+OCR online : online
+=============================================
+2.png
+both instructors are the same
+both dates are the same
+both starting time are the same
+both ending time are the same
+both online are the same
+Image day : Tuesday
+OCR day : Thursday
+Image Topic : قاعدة بيانات
+OCR Topic : قاعدة بيانات IEEE 
+Image Instructor : رانبير سيدهي
+OCR Instructor : المهندس / رانبيير سيدھي
+Image Date : 2021-10-12
+OCR Date : 2021-10-12
+Image Starting : 10:00
+OCR starting : 10:00
+Image ending : 11:00
+OCR ending : 11:00
+Image online : online
+OCR online : Online
+=============================================
+3.png
+both days are the same
+both topics are the same
+both instructors are the same
+both starting time are the same
+both ending time are the same
+Image day : Wednesday
+OCR day : Wednesday
+Image Topic : بناء الشخصية و تطوير الذات
+OCR Topic : بناء الشخصية وتطوير الذات 
+Image Instructor : علي حسين
+OCR Instructor : د. علي حسين 
+Image Date : 2021-10-27
+OCR Date : 0.0
+Image Starting : 20:00
+OCR starting : 20:00
+Image ending : 22:00
+OCR ending : 22:00
+Image online : online
+OCR online : in Person
+=============================================
+4.png
+both days are the same
+both topics are the same
+both instructors are the same
+both dates are the same
+both starting time are the same
+both online are the same
+Image day : Wednesday
+OCR day : Wednesday
+Image Topic : الأمن السيبراني
+OCR Topic : الأمن السيبراني 
+Image Instructor : سعود واصلي
+OCR Instructor : د. سعود واصلي
+Image Date : 2022-02-23
+OCR Date : 2022-02-23
+Image Starting : 16:30
+OCR starting : 16:30
+Image ending : 18:00
+OCR ending : 13:00
+Image online : online
+OCR online : Online
+=============================================
+5.png
+both topics are the same
+both instructors are the same
+both dates are the same
+both starting time are the same
+both ending time are the same
+both online are the same
+Image day : Tuesday
+OCR day : Thursday
+Image Topic : قاعدة بيانات LINK SPRINGER
+OCR Topic : قاعدة بيانات LINK SPRINGER 
+Image Instructor : لين سماره
+OCR Instructor : الأستاذة / لين سماره
+Image Date : 2021-10-12
+OCR Date : 2021-10-12
+Image Starting : 20:20
+OCR starting : 20:20
+Image ending : 21:20
+OCR ending : 21:20
+Image online : online
+OCR online : Online
+=============================================
+6.png
+both days are the same
+both topics are the same
+both instructors are the same
+both dates are the same
+both starting time are the same
+both ending time are the same
+Image day : Sunday
+OCR day : Sunday
+Image Topic : مقدمة في علم البيانات و تحليلها
+OCR Topic : البيانات وتحليلها 
+Image Instructor : نبيل البشري
+OCR Instructor :  د. نبيل البشري
+Image Date : 2021-03-28
+OCR Date : 2021-03-28
+Image Starting : 08:45
+OCR starting : 08:45
+Image ending : 10:45
+OCR ending : 10:45
+Image online : online
+OCR online : in Person
+=============================================
+7.png
+both days are the same
+both instructors are the same
+both dates are the same
+both starting time are the same
+both ending time are the same
+both online are the same
+Image day : Monday
+OCR day : Monday
+Image Topic : تصميم الجرافيكس
+OCR Topic : 1/5 من سسلة عطاء تقني 
+Image Instructor : عبدالله الكثيري
+OCR Instructor : عبدالله الكثيري 
+Image Date : 2021-11-22
+OCR Date : 2021-11-22
+Image Starting : 20:15
+OCR starting : 20:15
+Image ending : 22:00
+OCR ending : 22:00
+Image online : online
+OCR online : Online
+=============================================
+8.png
+both days are the same
+both topics are the same
+both instructors are the same
+both dates are the same
+both starting time are the same
+both online are the same
+Image day : Monday
+OCR day : Monday
+Image Topic : مهارات توظيف الحوسبة السحابية في البحث العلمي
+OCR Topic : الباحث الجديديقدم اللقاء العلمي بعنوانمهارات توظيف الحوسبة السحابية في البحث العلميالمدرب باریان
+Image Instructor : عادل سالم
+OCR Instructor : Instructor not Found
+Image Date : 2022-02-28
+OCR Date : 2022-02-28
+Image Starting : 20:30
+OCR starting : 20:30
+Image ending : 0
+OCR ending : 17:30
+Image online : in Person
+OCR online : in Person
+=============================================
+9.png
+both days are the same
+both topics are the same
+both instructors are the same
+both dates are the same
+both online are the same
+Image day : Tuesday
+OCR day : Tuesday
+Image Topic : الكشف عن الاستلال
+OCR Topic : الكشف عن الاستلال 
+Image Instructor : ليلى محمد
+OCR Instructor : د. ليلى محمد 
+Image Date : 2022-01-18
+OCR Date : 2022-01-18
+Image Starting : 15:00
+OCR starting : 43:00
+Image ending : 17:00
+OCR ending : 20:00
+Image online : in Person
+OCR online : in Person
+=============================================
+10.png
+both days are the same
+both topics are the same
+both instructors are the same
+both dates are the same
+both online are the same
+Image day : Tuesday
+OCR day : Tuesday
+Image Topic : البرمجة بالجافا
+OCR Topic : أساسيات 
+Image Instructor : نايف العتيبي
+OCR Instructor : د. نايف العتيبي
+Image Date : 2021-02-23
+OCR Date : 2021-02-23
+Image Starting : 17:00
+OCR starting : 0
+Image ending : 20:00
+OCR ending : 
+Image online : in Person
+OCR online : in Person
+=============================================
+11.png
+both days are the same
+both instructors are the same
+both dates are the same
+both starting time are the same
+both ending time are the same
+both online are the same
+Image day : Sunday
+OCR day : Sunday
+Image Topic : منصة ذكية لاستدامة التعليم
+OCR Topic : الثقافيةمحاضرةالتعليم الرقمي: منصة
+Image Instructor : ميادة المصري
+OCR Instructor : د.ميادة المصري
+Image Date : 2022-01-30
+OCR Date : 2022-01-30
+Image Starting : 09:00
+OCR starting : 09:00
+Image ending : 10:30
+OCR ending : 10:30
+Image online : online
+OCR online : Online
+=============================================
+accuercy : 80.49%

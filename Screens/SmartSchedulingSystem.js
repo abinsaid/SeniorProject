@@ -65,9 +65,10 @@ export const styles = StyleSheet.create({
       marginLeft:3
     },
     subIconText:{
-      color:'#6c757d',
+      color:'#001219',
       marginLeft: 15,
-      marginBottom:100
+      marginBottom:100,
+      fontWeight:'bold'
   
     },
     textStyles: {
