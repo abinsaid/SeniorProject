@@ -96,12 +96,12 @@ def insertEvent(jd):
 - ### Events Table
 In the MongoDB we have a schema for the project called ProjectDB, and it include two tables: events and users. The events table will store records of each events info's comes from the Machine learning model by receiving a post request from it with the events info. Later, the mobile application will fetch these records into a page in the application for viewing it.
 
-((eventsTable.jpg))
+![SCREENSHOT](GithubScreenShots/eventsTable1.jpg.png)
 
 - ### Users Table
 The following snapshot reference for the users table, which is responsible for saving any users record store after registering into our application, and as you can see each password for each user is hashed for more security.
 
-((usersTable.jpg))
+![SCREENSHOT](GithubScreenShots/usersTable.png)
 
 ### - Router (React native BackEnd)
 This code establishes a listening server using Node.Js and express Js:
@@ -173,19 +173,23 @@ app.post("/addEvent", async (req, res) => {
 
 - ### Home page
 The following page represents the first page that the user interacts with when they enter the application, the page who's a button that transport the user into the Login page
-((Homepage.jpg))
+
+![SCREENSHOT](GithubScreenShots/Homepage.jpg.png)
 
 
 - ### Login page
 This page responsible for taking user email and password as input so the user can authenticate and log in into the application. in case the user doesn’t have an account, he need to press on sign up button to register for an account.
-((LoginPage.jpg))
+
+![SCREENSHOT](GithubScreenShots/Loginpage.jpg.png)
 
 
 - ### Events page
-While loading the event page, a function called useEffect will immediately make a GET request that contain the whole events table and list it in the Events page, it shows all the events that has been analyzed by the machine learning model and stored into the database in the events table. 
-((EventsPage.jpg))
+While loading the event page, a function called useEffect will immediately make a GET request that contain the whole events table and list it in the Events page, it shows all the events that has been analyzed by the machine learning model and stored into the database in the events table.
+
+![SCREENSHOT](GithubScreenShots/EventPage.jpg.png)
 
 
 - ### Calendar page
 After viewing the events page, the student can use the calendar page as reminders by adding various tasks in desired time and date, the user also can modify or delete any task they choose.
-((CalenderPage.jpg))
+
+![SCREENSHOT](GithubScreenShots/CalendarPage.jpg.png)
